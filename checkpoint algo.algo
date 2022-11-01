@@ -1,0 +1,37 @@
+ALGORITHM checkpoint_algo
+VAR
+
+    length_s , length_w , length_v , i : INTIGER =0
+    sentence : STRING
+    
+BEGIN
+
+// donner une phrase qui se termine par point
+
+    DO
+        write("write the sentence")
+        read (sentence)
+    WHILE (sentence[sentence.length-1]<>".") 
+    
+// trouve length_words , length_sentance , length_vowols 
+    
+    FOR i FROM 0 TO sentence.length-1 DO
+
+        IF (sentence[i] = " ") THEN
+            length_w := length_w + 1
+
+        ELSE_IF (sentence[i] <> " ") THEN
+            length_s := length_s +1
+
+        ELSE_IF (sentence[i] = "a" || sentence[i] = "e" ||sentence[i] = "i" ||sentence[i] = "o" ||sentence[i] = "u" ||sentence[i] = "y" || ) THEN
+            length_v := length_v +1
+            length_s := length_s +1
+
+        END_IF
+
+        write("The length of the sentence :", length_s )
+        write("The number of words in the sentence :", length_w )
+        write("The number of vowels in the sentence :", length_v )
+    END_FOR
+
+END
